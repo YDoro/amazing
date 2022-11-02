@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Header from './components/header/header';
+import UserContext from './contexts/user-context';
 import './index.css';
 import Home from './pages/home/home';
 import Login from './pages/login/login';
@@ -30,10 +31,20 @@ const router = createBrowserRouter([
 ])
 
 
+const App = () => {
+  const [logged, setLogged] = useState(false)
+
+  return (
+    <React.StrictMode>
+      <UserContext.Provider value={{ logged, setLogged }}>
+        <RouterProvider router={router} />
+      </UserContext.Provider>
+    </React.StrictMode>
+  )
+}
+
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <App />
 );
 
 reportWebVitals();
