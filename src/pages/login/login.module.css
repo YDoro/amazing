@@ -1,0 +1,18 @@
+.Wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--secondary-color);
+}
+
+.TitleWrapper {
+    width: 100vw;
+    display: flex;
+}
+
+.Title {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: var(--text-size-xl);
+    font-weight: bold;
+}
