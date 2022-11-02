@@ -1,0 +1,54 @@
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: var(--spacing-1);
+  min-height: 32px;
+  align-items: center;
+  border-bottom: 1px solid var(--color-highlight);
+}
+
+.Link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: large;
+  font-weight: bold;
+}
+
+.Link:hover {
+  color: var(--color-highlight);
+  cursor: pointer;
+}
+
+.SearchWrapper {
+  width: 25%;
+}
+
+.SearchBox {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  height: 25px;
+  width: 100%;
+}
+
+.SearchBox:focus {
+  outline: none;
+}
+
+.ButtonsWrapper {
+  color: var(--text-color);
+  display: flex;
+}
+
+.IconButtom {
+  color: var(--text-color);
+}
+
+.IconButtom:hover {
+  cursor: pointer;
+  color: var(--color-highlight);
+}
+
+.IconButtom:nth-child(odd) {
+  margin-right: 8px;
+}

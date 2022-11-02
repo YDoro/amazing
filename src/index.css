@@ -1,8 +1,12 @@
 :root{
-  --secondary-color: #222255;
+  --secondary-color: #dfdfdf;
+  --text-color: #202020;
+  --color-highlight: #ff9100;
   --text-size-xl: 32pt;
+  --spacing-1: 8px;
 }
 
 body {
   margin: 0;
+  color: var(--text-color);
 }
