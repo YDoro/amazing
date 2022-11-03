@@ -6,6 +6,7 @@ import UserContext from './contexts/user-context';
 import './index.css';
 import Home from './pages/home/home';
 import Login from './pages/login/login';
+import Profile from './pages/profile/profile';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,15 +29,26 @@ const router = createBrowserRouter([
     path: "/login",
     element: withHeader(<Login />),
   },
+  {
+    path: "/profile",
+    element: withHeader(<Profile />),
+  },
 ])
 
 
 const App = () => {
-  const [logged, setLogged] = useState(false)
+  const storageLogged =  localStorage.getItem('logged') ?? false
+
+  const [logged, setLogged] = useState(storageLogged)
+
+  const setLoggedAndStore = (isLogged) => {
+    setLogged(isLogged)
+    localStorage.setItem('logged',isLogged)
+  }
 
   return (
     <React.StrictMode>
-      <UserContext.Provider value={{ logged, setLogged }}>
+      <UserContext.Provider value={{ logged, setLogged:setLoggedAndStore }}>
         <RouterProvider router={router} />
       </UserContext.Provider>
     </React.StrictMode>

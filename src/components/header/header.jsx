@@ -4,7 +4,7 @@ import useUser from '../../hooks/useUser'
 import style from './header.module.css'
 
 const Header = () => {
-    const { logged, setLogged } = useUser()
+    const { logged } = useUser()
 
     return (
         <header className={style.Wrapper}>
@@ -17,7 +17,7 @@ const Header = () => {
                 <input type="text" placeholder='search' className={style.SearchBox} />
             </div>
             <div className={style.ButtonsWrapper}>
-                <Link to={!logged ? "/login" : "profile"}>
+                <Link to={!logged ? "/login" : "/profile"}>
                     <FiUser size={28} className={style.IconButtom} />
                 </Link>
                 <FiShoppingCart size={28} className={style.IconButtom} />
