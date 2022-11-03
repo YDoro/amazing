@@ -37,18 +37,10 @@ const router = createBrowserRouter([
 
 
 const App = () => {
-  const storageLogged =  localStorage.getItem('logged') ?? false
-
-  const [logged, setLogged] = useState(storageLogged)
-
-  const setLoggedAndStore = (isLogged) => {
-    setLogged(isLogged)
-    localStorage.setItem('logged',isLogged)
-  }
-
+  const [logged, setLogged] = useState(false)
   return (
     <React.StrictMode>
-      <UserContext.Provider value={{ logged, setLogged:setLoggedAndStore }}>
+      <UserContext.Provider value={{ logged, setLogged }}>
         <RouterProvider router={router} />
       </UserContext.Provider>
     </React.StrictMode>
