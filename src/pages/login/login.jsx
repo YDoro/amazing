@@ -1,12 +1,14 @@
+import { useNavigate } from 'react-router-dom'
 import useUser from '../../hooks/useUser'
 import style from './login.module.css'
 
 const Login = () => {
     const { setLogged } = useUser()
+    const navigate = useNavigate()
 
     const makeFakeLogin = () => {
         setLogged(true)
-        window.location.replace('/')
+        navigate('/')
     }
     return (
         <div className={style.Wrapper}>
@@ -15,9 +17,11 @@ const Login = () => {
                     Login Page
                 </div>
             </div>
-            <button onClick={makeFakeLogin}>
-                Login
-            </button>
+            <div className={style.ButtonWrapper}>
+                <button onClick={makeFakeLogin}>
+                    Login
+                </button>
+            </div>
         </div>
     )
 }

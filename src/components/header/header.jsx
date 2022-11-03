@@ -9,9 +9,9 @@ const Header = () => {
     return (
         <header className={style.Wrapper}>
             <div>
-                <a href="/" className={style.Link}>
+                <Link to="/" className={style.Link}>
                     LOGO
-                </a>
+                </Link>
             </div>
             <div className={style.SearchWrapper}>
                 <input type="text" placeholder='search' className={style.SearchBox} />
