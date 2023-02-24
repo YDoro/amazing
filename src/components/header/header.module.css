@@ -1,16 +1,15 @@
 .Wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: var(--spacing-1);
-  min-height: 32px;
   align-items: center;
-  border-bottom: 1px solid var(--color-highlight);
+  border-bottom: 2px solid var(--color-highlight);
 }
 
 .Link {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--secondary-color);
   font-size: large;
   font-weight: bold;
 }
@@ -21,14 +20,30 @@
 }
 
 .SearchWrapper {
-  width: 25%;
+  width: 36%;
+  position: relative;
 }
+
+.SearchIcon {
+  position: absolute;
+  box-sizing:border-box;
+  top:50%;
+  right:0px;
+  transform: translateY(-50%);
+}
+
+.SearchIcon:hover {
+  cursor: pointer;
+  color: var(--color-highlight);
+}
+
 
 .SearchBox {
   border: 1px solid lightgray;
   border-radius: 8px;
-  height: 25px;
+  height: 40px;
   width: 100%;
+  padding: 0 10px;
 }
 
 .SearchBox:focus {
@@ -36,12 +51,13 @@
 }
 
 .ButtonsWrapper {
-  color: var(--text-color);
+  color: var(--secondary-color);
   display: flex;
+  margin-right: 8px;
 }
 
 .IconButtom {
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 .IconButtom:hover {
